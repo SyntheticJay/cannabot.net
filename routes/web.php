@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Landing\LandingController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('landing.index');
+});
+
+Route::group([
+    'prefix' => 'landing',
+    'as'     => 'landing.'
+], function () {
+    Route::get('/', [LandingController::class, 'index'])->name('index');
 });

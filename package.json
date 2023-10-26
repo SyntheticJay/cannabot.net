@@ -6,8 +6,17 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@vitejs/plugin-vue": "^4.4.0",
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.8.0",
+        "sass": "^1.69.5",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "@inertiajs/progress": "^0.2.7",
+        "@inertiajs/vue3": "^1.0.13",
+        "primeflex": "^3.3.1",
+        "primeicons": "^6.0.1",
+        "primevue": "^3.37.0"
     }
 }
