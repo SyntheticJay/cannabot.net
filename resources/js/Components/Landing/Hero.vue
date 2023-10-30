@@ -1,5 +1,5 @@
 <template>
-    <section id="hero" style="height: 80vh;" class="flex justify-content-center align-items-center">
+    <section id="hero" style="height: 80vh;" class="flex justify-content-center align-items-center mb-5">
         <div class="grid grid-nogutter text-800 ml-8 mr-8">
             <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center flex-wrap">
                 <section>
@@ -20,7 +20,7 @@
                 </section>
             </div>
             <div class="col-12 md:col-6 overflow-hidden">
-                <img :src="logo" width="400" height="400" alt="Image" class="md:ml-auto block md:h-full">
+                <levitating-logo />
             </div>
         </div>
     </section>
@@ -28,19 +28,9 @@
 
 <script setup>
 import Button from "primevue/button";
+import LevitatingLogo from "./LevitatingLogo.vue";
+import { usePage } from "@inertiajs/vue3";
 
-defineProps({
-    logo: {
-        type: String,
-        required: true
-    },
-    inviteUrl: {
-        type: String,
-        required: true
-    },
-    supportUrl: {
-        type: String,
-        required: true
-    }
-})
+const inviteUrl = route('landing.invite');
+const supportUrl = route('landing.support');
 </script>

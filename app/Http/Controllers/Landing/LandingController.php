@@ -8,16 +8,33 @@ use Inertia\Inertia;
 
 class LandingController extends Controller
 {
+    /**
+     * Show the landing page.
+     *
+     * @return \Inertia\Response
+     */
     public function index()
     {
-        $logo       = asset('img/logo.png');
-        $supportUrl = config('cannabot.support_url');
-        $inviteUrl  = config('cannabot.invite_url');
+        return Inertia::render('Landing/Index');
+    }
 
-        return Inertia::render('Landing/Index', [
-            'logo'       => $logo,
-            'supportUrl' => $supportUrl,
-            'inviteUrl'  => $inviteUrl,
-        ]);
+    /**
+     * Show the support page.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function support()
+    {
+        return redirect()->away(config('cannabot.support_url'));
+    }
+
+    /**
+     * Show the invite page.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function invite()
+    {
+        return redirect()->away(config('cannabot.invite_url'));
     }
 }
