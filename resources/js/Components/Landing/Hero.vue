@@ -1,5 +1,5 @@
 <template>
-    <section id="hero" style="height: 100vh;" class="flex justify-content-center align-items-center">
+    <section id="hero" style="height: 80vh;" class="flex justify-content-center align-items-center">
         <div class="grid grid-nogutter text-800 ml-8 mr-8">
             <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center flex-wrap">
                 <section>
