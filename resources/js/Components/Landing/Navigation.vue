@@ -9,13 +9,15 @@
                 <ul class="flex flex-column mt-4 md:flex-row md:gap-3 md:mt-0 md:text-sm md:font-medium">
                     <li v-for="item in items" :key="item.label" class="flex align-items-center">
                         <inertia-link v-if="item.inertia" :href="item.to" class="
-                                block py-2 pr-4 pl-3 text-white md:bg-transparent text-green-500 md:p-0
+                                nav-link block py-2 pr-4 pl-3 text-white md:bg-transparent md:p-0
+                                hover:text-primary
                             ">
                             <i :class="item.icon"></i>
                             <span class="ml-2">{{ item.label }}</span>
                         </inertia-link>
                         <a v-else :href="item.to" class="
-                                block py-2 pr-4 pl-3 text-white md:bg-transparent text-green-500 md:p-0
+                                nav-link block py-2 pr-4 pl-3 text-white md:bg-transparent md:p-0
+                                hover:text-primary
                             ">
                             <i :class="item.icon"></i>
                             <span class="ml-2">{{ item.label }}</span>
@@ -53,3 +55,12 @@ const items = ref([
     }
 ]);
 </script>
+
+<style scoped>
+    #nav-logo {
+        border-radius: 50%;
+    }
+    .nav-link {
+        text-decoration: none;
+    }
+</style>

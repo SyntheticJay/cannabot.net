@@ -63,4 +63,15 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.hidden-block {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show-block {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
 </style>
