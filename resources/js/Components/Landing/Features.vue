@@ -1,5 +1,5 @@
 <template>
-   <section id="features">
+   <section id="features" class="features-backdrop">
        <div class="px-4 py-8 md:px-6 lg:px-8 text-center">
            <div class="mb-3 font-bold text-3xl">
                <span class="text-900">Why Cannabot?</span>
@@ -39,4 +39,28 @@
 
 <script setup>
 import FeatureBlock from "./FeatureBlock.vue";
+import { onMounted, onUnmounted } from "vue";
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-block');
+
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+onMounted(() => {
+    document.querySelectorAll('.hidden-block').forEach((block) => {
+        observer.observe(block);
+    });
+});
+
+onUnmounted(() => {
+    observer.disconnect();
+});
 </script>
+
+<style scoped>
+</style>

@@ -1,26 +1,21 @@
 @import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 html {
     scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif !important;
 }
 body {
     margin: 0 !important;
 }
-@keyframes float {
-    0% {
-        transform: translatey(0px);
-    }
-    50% {
-        transform: translatey(-20px);
-    }
-    100% {
-        transform: translatey(0px);
-    }
+.hidden-block {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
 }
-#arrow {
-    animation: float 1s ease-in-out infinite;
-}
-#logo-box {
-    transform-style: preserve-3d;
-    transform: translateZ(0);
+.show-block {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
 }

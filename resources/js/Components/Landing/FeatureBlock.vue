@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 md:col-4 mb-4 px-5">
+    <div class="hidden-block col-12 md:col-4 mb-4 px-5">
         <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
             <i :class="icon + ' text-4xl text-primary'"></i>
         </span>
