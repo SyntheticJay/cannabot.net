@@ -5,7 +5,7 @@
     </main>
 </template>
 <script setup>
-import Navigation from '../Components/Navigation.vue';
+import Navigation from '../Components/Common/Navigation.vue';
 import { ref } from 'vue';
 import { usePage } from "@inertiajs/vue3";
 import { computed } from "vue";

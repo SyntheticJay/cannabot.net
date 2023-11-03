@@ -5,7 +5,7 @@
     </main>
 </template>
 <script setup>
-import Navigation from "../Components/Navigation.vue";
+import Navigation from "../Components/Common/Navigation.vue";
 import { ref } from "vue";
 
 const navItems = ref([
