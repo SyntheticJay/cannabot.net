@@ -38,6 +38,18 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             'logo' => asset('img/logo.png'),
+            'auth.user' => fn () => $request->user()
+                ? $request->user()->only(
+                    'id',
+                    'name',
+                    'nickname',
+                    'email',
+                    'discord_id',
+                    'avatar',
+                    'locale',
+                    'created_at',
+                )
+                : null,
         ]);
     }
 }

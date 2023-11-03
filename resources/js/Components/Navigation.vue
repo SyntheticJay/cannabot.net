@@ -30,30 +30,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import { usePage } from "@inertiajs/vue3";
 
 const logo = usePage().props.logo;
-const items = ref([
-    {
-        label: 'Home',
-        icon: 'pi pi-fw pi-home',
-        to: route('landing.index'),
-        inertia: true
+
+defineProps({
+    items: {
+        type: Array,
+        required: true,
     },
-    {
-        label: 'Support',
-        icon: 'pi pi-fw pi-question-circle',
-        to: route('landing.support'),
-        inertia: false,
-    },
-    {
-        label: 'Invite',
-        icon: 'pi pi-fw pi-user-plus',
-        to: route('landing.invite'),
-        inertia: false,
-    }
-]);
+});
 </script>
 
 <style scoped>
